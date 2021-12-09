@@ -14,6 +14,106 @@
 
     <title>Vanilla Weather App</title>
   </head>
+  <body>
+  <div class="container">
+      <form id="search-form">
+        <div class="row">
+          <div class="col-8" id="input">
+            <input class="search" type="search" placeholder="Enter a city" id="search-input"/>
+            <span class="icon-search"><i class="fas fa-search"></i></span>
+          </div>
+          <!-- <div class="col-4"> -->
+          <div class="col-2" id="col-2">
+            <select name="degrees" id="degree-select">
+              <option value="celsius" id="celsius">Celsius</option>
+              <option value="fahrenheit" id="fahrenheit">Fahrenheit</option>
+            </select>
+            </div>
+            <div class="col-2" id="col-2">
+              <span class="icon-current"><i class="fas fa-location-arrow"></i></span>  
+              <button type="button" id="current-weather">Current</button>
+            </div>
+            <!-- </div> -->
+        </div>
+      </form>
+      <div class="card" id="big-card">
+        <div class="card-body">
+          <div class="current-weather">
+            <h2>Los Angeles</h2>
+            <h3 id="current-date"></h4>
+            <h1>26°</h1>
+            <img src="assets/img_partlycloudy.png" id="large-img" />
+            <br />
+            
+            <span>Suuny<br />Wind: 2 kmp/h</span>
+            
+            <div class="row justify-content-md-center" id="high-low">
+            <div class="col-md-auto">
+                <div class="high">
+                    <h3 id="high">H:33°</h3>
+                </div>
+            </div>
+            <div class="col-md-auto">
+                <div class="low">
+                    <h3 id="low">L:14°</h3>
+                </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-md-center" id="forecast">
+            <div class="col-2">
+              <div class="day1">
+                <img src="assets/img_sunny_sm.png" class="sm-icon"/>
+                <h5>33°</h5>
+              </div>
+              <h4>Saturday 06</h4>
+            </div>
+            <div class="col-2">
+              <div class="day2">
+                <img src="assets/img_partlycloudy_sm.png" class="sm-icon"/>
+                <h5>31°</h5>
+              </div>
+              <h4>Sunday 07</h4>
+            </div>
+            <div class="col-2">
+              <div class="day3">
+                <img src="assets/img_sunny_sm.png" class="sm-icon"/>
+                <h5>29°</h5>
+              </div>
+              <h4>Monday 08</h4>
+            </div>
+            <div class="col-2">
+              <div class="day4">
+                <img src="assets/img_cloudy_sm.png" class="sm-icon"/>
+                <h5>29°</h5>
+              </div>
+              <h4>Tuesday 09</h4>
+            </div>
+            <div class="col-2">
+              <div class="day5">
+                <img src="assets/img_sunny_sm.png" class="sm-icon"/>
+                <h5>29°</h5>
+              </div>
+              <h4>Wednesday 10</h4>
+            </div>
+            <div class="col-2">
+              <div class="day6">
+                <img src="assets/img_partlycloudy_sm.png" class="sm-icon"/>
+                <h5>29°</h5>
+              </div>
+              <h4>Thursday 11</h4>
+        </div> 
+
+        </div>
+      </div>
+    </div>
+    <br />
+          <p><a href="https://github.com/Andrea-Pinales/github-week-6" target="blank">Open-source code</a> by Andrea Pinales</p>
+    <br />
+    <br />
+    <br />
+    <br />
   <script src="src/app.js"></script>
-  <body></body>
+  </body>
 </html>
