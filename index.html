@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
@@ -48,11 +51,12 @@
         <div class="card-body">
           <div class="current-weather">
             <h2>Los Angeles</h2>
-            <h3 id="current-date">Thursday | Dec 9 | 12:44</h3>
+            <h3>Last updated, <span id="current-date"></span></h3>
             <h1>26°</h1>
             <img src="assets/img_partlycloudy.png" id="large-img" />
             <br />
-            <span>Sunny <br /> Wind: 10km/h</span>
+            <h3 id="description">Sunny</h3>
+            <h3>Wind: <span id="wind">2</span> km/h</h3>
             <div class="row justify-content-md-center" id="high-low">
             <div class="col-md-auto">
                 <div class="high">

@@ -24,6 +24,10 @@ span {
   color: rgba(255, 255, 255, 0.6);
 }
 
+#description {
+  text-transform: capitalize;
+}
+
 h4 {
   font-size: 12px;
   color: rgba(0, 20, 98, 0.5);
@@ -157,7 +161,6 @@ p {
 }
 
 #high-low {
-  padding: 7px;
   margin: 0 auto;
 }
 
