@@ -31,15 +31,43 @@ function showDetails(response) {
   let description = document.querySelector("#description");
   let wind = document.querySelector("#wind");
   let date = document.querySelector("#current-date");
+  let icon = document.querySelector("#large-img");
 
   temperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   wind.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let apiKey = `6b3d29e35af9a0ad7b7cb7c2b0e0a388`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=mexicali&appid=${apiKey}&units=metric`;
+let city = "Mexicali";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(apiUrl);
 
 axios.get(apiUrl).then(showDetails);
+
+//function to change openweather icons to custom icons
+// function updateIcon(icon) {
+//   if (icon === 04d) {
+//     image = "04d_241.png";
+//   }
+// }
+
+// let currentIcon = document.querySelector("#large-img");
+// currentIcon.innerHTML = updateIcon;
+
+//function to change background day and night
+// function changeBackground(background) {
+//   if (hours > 07 | < 17) {
+//     background = linear-gradient(to top, #5a9fef 0%, #5a9fef 1%, #001462 100%);
+//   } else {
+//     background = linear-gradient(160deg, #61b1fe 0%, #aedefe 48%, #82e0fe 100%);
+//   }
+// }
+
+// let background = document.querySelector("#big-card");
+// background.innerHTML = changeBackground;
