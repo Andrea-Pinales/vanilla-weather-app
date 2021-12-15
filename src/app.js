@@ -40,12 +40,6 @@ function showDetails(response) {
   date.innerHTML = formatDate(response.data.dt * 1000);
   icon.setAttribute("src", `assets/${response.data.weather[0].icon}_241.png`);
 }
-let apiKey = `6b3d29e35af9a0ad7b7cb7c2b0e0a388`;
-let city = "Mexicali";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
-
-axios.get(apiUrl).then(showDetails);
 
 // function to change background day and night
 function changeBackground(hours) {
@@ -62,3 +56,23 @@ function changeBackground(hours) {
 
 let background = document.querySelector("#big-card");
 background.style.background = changeBackground(new Date().getHours());
+
+//function to search weather
+function search(city) {
+  let units = "metric";
+  let cityApiKey = `863aa96abe5f8c1e9740ef03ccb228c4`;
+  let cityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${cityApiKey}&units=${units}`;
+
+  axios.get(cityApiUrl).then(showDetails);
+}
+
+function searchWeather(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-input");
+  search(city.value);
+}
+
+search("Mexicali");
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchWeather);
