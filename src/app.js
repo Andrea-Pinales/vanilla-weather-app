@@ -32,8 +32,12 @@ function showDetails(response) {
   let wind = document.querySelector("#wind");
   let date = document.querySelector("#current-date");
   let icon = document.querySelector("#large-img");
+  let highTemperature = document.querySelector("#high");
+  let lowTemperature = document.querySelector("#low");
 
   celsius = response.data.main.temp;
+  high = response.data.main.temp_max;
+  low = response.data.main.temp_min;
 
   temperature.innerHTML = `${Math.round(celsius)}°C`;
   city.innerHTML = response.data.name;
@@ -41,6 +45,8 @@ function showDetails(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = formatDate(response.data.dt * 1000);
   icon.setAttribute("src", `assets/${response.data.weather[0].icon}_241.png`);
+  highTemperature.innerHTML = `H:${Math.round(high)}°`;
+  lowTemperature.innerHTML = `L:${Math.round(low)}°`;
 }
 
 // function to change background day and night
@@ -77,19 +83,31 @@ function searchWeather(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchWeather);
 
-//function to change celsius from fahrenheit
+//function to convert temperature, high and low units
 function changeCelsius() {
   let selectTemperature = document.querySelector("h1");
+  let selectHigh = document.querySelector("#high");
+  let selectLow = document.querySelector("#low");
   selectTemperature.innerHTML = `${Math.round(celsius)}°C`;
+  selectHigh.innerHTML = `H:${Math.ceil(high)}°`;
+  selectLow.innerHTML = `L:${Math.floor(low)}°`;
 }
 
 function changeFahrenheit(event) {
   let selectTemperature = document.querySelector("h1");
+  let selectHigh = document.querySelector("#high");
+  let selectLow = document.querySelector("#low");
   let fahrenheit = (celsius * 9) / 5 + 32;
+  let highFahrenheit = (high * 9) / 5 + 32;
+  let lowFahrenheit = (low * 9) / 5 + 32;
   selectTemperature.innerHTML = `${Math.round(fahrenheit)}°F`;
+  selectHigh.innerHTML = `H:${Math.ceil(highFahrenheit)}°`;
+  selectLow.innerHTML = `L:${Math.floor(highFahrenheit)}°`;
 }
 
 let celsius = null;
+let high = null;
+let low = null;
 
 function convertUnits(event) {
   event.preventDefault();
