@@ -33,7 +33,9 @@ function showDetails(response) {
   let date = document.querySelector("#current-date");
   let icon = document.querySelector("#large-img");
 
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  celsius = response.data.main.temp;
+
+  temperature.innerHTML = `${Math.round(celsius)}°C`;
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   wind.innerHTML = Math.round(response.data.wind.speed);
@@ -72,7 +74,33 @@ function searchWeather(event) {
   search(city.value);
 }
 
-search("Mexicali");
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchWeather);
+
+//function to change celsius from fahrenheit
+function changeCelsius() {
+  let selectTemperature = document.querySelector("h1");
+  selectTemperature.innerHTML = `${Math.round(celsius)}°C`;
+}
+
+function changeFahrenheit(event) {
+  let selectTemperature = document.querySelector("h1");
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  selectTemperature.innerHTML = `${Math.round(fahrenheit)}°F`;
+}
+
+let celsius = null;
+
+function convertUnits(event) {
+  event.preventDefault();
+  if (event.target.value === "celsius") {
+    changeCelsius();
+  } else {
+    changeFahrenheit();
+  }
+}
+
+let unitsElement = document.querySelector("#degree-select");
+unitsElement.addEventListener("change", convertUnits);
+
+search("Mexicali");
