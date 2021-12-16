@@ -111,42 +111,42 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchWeather);
 
 //function to convert temperature, high and low units
-function changeCelsius() {
-  let selectTemperature = document.querySelector("h1");
-  let selectHigh = document.querySelector("#high");
-  let selectLow = document.querySelector("#low");
-  selectTemperature.innerHTML = `${Math.round(celsius)}°C`;
-  selectHigh.innerHTML = `H:${Math.ceil(high)}°`;
-  selectLow.innerHTML = `L:${Math.floor(low)}°`;
-}
+// function changeCelsius() {
+//   let selectTemperature = document.querySelector("h1");
+//   let selectHigh = document.querySelector("#high");
+//   let selectLow = document.querySelector("#low");
+//   selectTemperature.innerHTML = `${Math.round(celsius)}°C`;
+//   selectHigh.innerHTML = `H:${Math.ceil(high)}°`;
+//   selectLow.innerHTML = `L:${Math.floor(low)}°`;
+// }
 
-function changeFahrenheit(event) {
-  let selectTemperature = document.querySelector("h1");
-  let selectHigh = document.querySelector("#high");
-  let selectLow = document.querySelector("#low");
-  let fahrenheit = (celsius * 9) / 5 + 32;
-  let highFahrenheit = (high * 9) / 5 + 32;
-  let lowFahrenheit = (low * 9) / 5 + 32;
-  selectTemperature.innerHTML = `${Math.round(fahrenheit)}°F`;
-  selectHigh.innerHTML = `H:${Math.ceil(highFahrenheit)}°`;
-  selectLow.innerHTML = `L:${Math.floor(highFahrenheit)}°`;
-}
+// function changeFahrenheit(event) {
+//   let selectTemperature = document.querySelector("h1");
+//   let selectHigh = document.querySelector("#high");
+//   let selectLow = document.querySelector("#low");
+//   let fahrenheit = (celsius * 9) / 5 + 32;
+//   let highFahrenheit = (high * 9) / 5 + 32;
+//   let lowFahrenheit = (low * 9) / 5 + 32;
+//   selectTemperature.innerHTML = `${Math.round(fahrenheit)}°F`;
+//   selectHigh.innerHTML = `H:${Math.ceil(highFahrenheit)}°`;
+//   selectLow.innerHTML = `L:${Math.floor(lowFahrenheit)}°`;
+// }
 
-let celsius = null;
-let high = null;
-let low = null;
+// let celsius = null;
+// let high = null;
+// let low = null;
 
-function convertUnits(event) {
-  event.preventDefault();
-  if (event.target.value === "celsius") {
-    changeCelsius();
-  } else {
-    changeFahrenheit();
-  }
-}
+// function convertUnits(event) {
+//   event.preventDefault();
+//   if (event.target.value === "celsius") {
+//     changeCelsius();
+//   } else {
+//     changeFahrenheit();
+//   }
+// }
 
-let unitsElement = document.querySelector("#degree-select");
-unitsElement.addEventListener("change", convertUnits);
+// let unitsElement = document.querySelector("#degree-select");
+// unitsElement.addEventListener("change", convertUnits);
 
 //forecast function
 function displayForecast(response) {

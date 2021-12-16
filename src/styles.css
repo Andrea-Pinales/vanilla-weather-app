@@ -68,12 +68,11 @@ p {
 .row {
   margin: 0;
   padding: 0;
-  max-width: 1000px;
 }
 
-.col-8 {
+.col-12 {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 auto;
 }
 
 .search {
@@ -108,6 +107,7 @@ p {
   color: #ffffff;
 }
 
+/* 
 #degree-select {
   height: 50px;
   width: 155px;
@@ -118,7 +118,7 @@ p {
   background-color: #001462;
   border: none !important;
   border-radius: 10px;
-}
+} */
 
 .icon-current i {
   position: absolute;
@@ -142,14 +142,14 @@ p {
   border-radius: 10px;
 }
 
-#col-2 {
+/* #col-2 {
   position: relative;
   display: inline-block;
   padding: 0;
   margin: 0 0 10px 0;
   width: auto;
   border: none !important;
-}
+} */
 
 #big-card {
   max-width: 1000px;
