@@ -29,9 +29,9 @@ span {
 }
 
 h4 {
-  font-size: 12px;
+  font-size: 14px;
   color: #001462;
-  margin: 15px 0 16px 0;
+  margin: 10px 0 16px 0;
 }
 
 #high-forecast {
@@ -52,7 +52,7 @@ p {
   font-size: 16px;
   font-weight: 400;
   color: #001462;
-  margin: 0 auto;
+  text-align: center;
 }
 
 #search-form {
