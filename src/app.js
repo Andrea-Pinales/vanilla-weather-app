@@ -24,6 +24,14 @@ function formatDate(timestamp) {
 }
 
 //function to show weather details
+function getForecast(coords) {
+  console.log(coords);
+  let apiKey = `863aa96abe5f8c1e9740ef03ccb228c4`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showDetails(response) {
   console.log(response);
   let temperature = document.querySelector("h1");
@@ -47,6 +55,8 @@ function showDetails(response) {
   icon.setAttribute("src", `assets/${response.data.weather[0].icon}_241.png`);
   highTemperature.innerHTML = `H:${Math.round(high)}°`;
   lowTemperature.innerHTML = `L:${Math.round(low)}°`;
+
+  getForecast(response.data.coord);
 }
 
 // function to change background day and night
@@ -122,7 +132,8 @@ let unitsElement = document.querySelector("#degree-select");
 unitsElement.addEventListener("change", convertUnits);
 
 //forecast function
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#forecast");
 
   let days = [
@@ -157,5 +168,4 @@ function displayForecast() {
   forecast.innerHTML = forecastHTML;
 }
 
-displayForecast();
 search("Mexicali");
