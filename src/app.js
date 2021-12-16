@@ -121,4 +121,41 @@ function convertUnits(event) {
 let unitsElement = document.querySelector("#degree-select");
 unitsElement.addEventListener("change", convertUnits);
 
+//forecast function
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+  ];
+
+  let forecastHTML = `<div class="row justify-content-md-center">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="day1">
+                <img src="assets/02d_241.png" class="sm-icon"/>
+                <div class="high-forecast">
+                    <h5 id="high-forecast">33°</h3>
+                </div>
+                <div class="low-forecast">
+                    <h5 id="low-forecast">14°</h3>
+                </div>
+                <h4>${day}</h4>
+              </div>
+            </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+displayForecast();
 search("Mexicali");

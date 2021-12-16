@@ -18,19 +18,28 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-  <div class="container">
+    <div class="container">
       <form id="search-form">
         <div class="row">
           <div class="col-8" id="input">
-            <input class="search" type="search" placeholder="Enter a city" id="search-input"/>
+            <input
+              class="search"
+              type="search"
+              placeholder="Enter a city"
+              id="search-input"
+            />
             <span class="icon-search"><i class="fas fa-search"></i></span>
           </div>
           <!-- <div class="col-4"> -->
@@ -39,12 +48,14 @@
               <option value="celsius" id="celsius">Celsius</option>
               <option value="fahrenheit" id="fahrenheit">Fahrenheit</option>
             </select>
-            </div>
-            <div class="col-2" id="col-2">
-              <span class="icon-current"><i class="fas fa-location-arrow"></i></span>  
-              <button type="button" id="current-weather">Current</button>
-            </div>
-            <!-- </div> -->
+          </div>
+          <div class="col-2" id="col-2">
+            <span class="icon-current"
+              ><i class="fas fa-location-arrow"></i
+            ></span>
+            <button type="button" id="current-weather">Current</button>
+          </div>
+          <!-- </div> -->
         </div>
       </form>
       <div class="card" id="big-card">
@@ -58,102 +69,36 @@
             <h3 id="description">Sunny</h3>
             <h3>Wind: <span id="wind">2</span> km/h</h3>
             <div class="row justify-content-md-center" id="high-low">
-            <div class="col-md-auto">
+              <div class="col-md-auto">
                 <div class="high">
-                    <h3 id="high">H:33°</h3>
+                  <h3 id="high">H:33°</h3>
                 </div>
-            </div>
-            <div class="col-md-auto">
+              </div>
+              <div class="col-md-auto">
                 <div class="low">
-                    <h3 id="low">L:14°</h3>
+                  <h3 id="low">L:14°</h3>
                 </div>
-            </div>
+              </div>
             </div>
           </div>
 
-          <div class="row justify-content-md-center" id="forecast">
-            <div class="col-2">
-              <div class="day1">
-                <img src="assets/02d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Saturday 06</h4>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day2">
-                <img src="assets/03d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Sunday 07</h4>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day3">
-                <img src="assets/04d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Monday 08</h4>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day4">
-                <img src="assets/03d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Tuesday 09</h4>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day5">
-                <img src="assets/04d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Wednesday 10</h4>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day6">
-                <img src="assets/05d_241.png" class="sm-icon"/>
-                <div class="high-forecast">
-                    <h5 id="high-forecast">33°</h3>
-                </div>
-                <div class="low-forecast">
-                    <h5 id="low-forecast">14°</h3>
-                </div>
-                <h4>Thursday 11</h4>
-              </div>
-        </div> 
-
+          <div class="row justify-content-md-center" id="forecast"></div>
         </div>
       </div>
     </div>
     <br />
-          <p><a href="https://github.com/Andrea-Pinales/vanilla-weather-app" target="blank">Open-source code</a> by Andrea Pinales</p>
+    <p>
+      <a
+        href="https://github.com/Andrea-Pinales/vanilla-weather-app"
+        target="blank"
+        >Open-source code</a
+      >
+      by Andrea Pinales
+    </p>
     <br />
     <br />
     <br />
     <br />
-  <script src="src/app.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
